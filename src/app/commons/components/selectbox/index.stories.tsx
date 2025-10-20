@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { useState } from 'react';
 import { SelectBox, SelectOption } from './index';
 
@@ -621,7 +621,7 @@ export const Interactive: Story = {
           placeholder='국가를 선택하세요'
         />
         <p style={{ marginTop: '16px', fontSize: '14px', color: '#666' }}>
-          선택된 값: "{selectedValue}"
+          선택된 값: &quot;{selectedValue}&quot;
         </p>
         <p style={{ marginTop: '8px', fontSize: '12px', color: '#999' }}>
           선택된 옵션:{' '}

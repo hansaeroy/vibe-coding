@@ -1,6 +1,26 @@
 import type { Preview } from '@storybook/nextjs-vite';
 import '../src/app/globals.css'; // 글로벌 CSS 스타일 import
 
+// 스토리북에서 다크모드 미디어 쿼리를 무시하고 항상 라이트 테마 사용
+const storybookStyles = `
+  body {
+    background: #ffffff !important;
+    color: #171717 !important;
+  }
+  
+  /* 스토리북 캔버스 영역도 하얀색으로 설정 */
+  .sb-show-main {
+    background: #ffffff !important;
+  }
+`;
+
+// 스타일을 head에 추가
+if (typeof document !== 'undefined') {
+  const style = document.createElement('style');
+  style.textContent = storybookStyles;
+  document.head.appendChild(style);
+}
+
 const preview: Preview = {
   parameters: {
     // 액션 로깅 설정
@@ -17,7 +37,7 @@ const preview: Preview = {
       expanded: true, // 컨트롤 패널을 기본적으로 확장된 상태로 표시
     },
 
-    // 배경 설정
+    // 배경 설정 - 기본값을 하얀색으로 강제 설정
     backgrounds: {
       default: 'light',
       values: [
@@ -34,6 +54,8 @@ const preview: Preview = {
           value: '#f2f2f2',
         },
       ],
+      // 배경을 항상 하얀색으로 강제 설정
+      disable: false,
     },
 
     // 뷰포트 설정

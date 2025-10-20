@@ -62,6 +62,7 @@
 .navIcon {
   width: 24px;
   height: 24px;
+  display: block;
 }
 
 /* 페이지 번호 버튼 */
@@ -107,18 +108,18 @@
 
 /* ========== VARIANT STYLES ========== */
 
-/* Primary Variant */
+/* Primary Variant - 피그마 디자인에 맞춰 기본 스타일 사용 */
 .primary .pageButtonActive {
-  background-color: #6da5fa;
-  color: #ffffff;
+  background-color: #f2f2f2;
+  color: #000000;
 }
 
 .primary .pageButtonActive:hover {
-  background-color: #497cff;
+  background-color: #e4e4e4;
 }
 
 .primary .pageButtonActive:active {
-  background-color: #3a5cf3;
+  background-color: #d4d3d3;
 }
 
 /* Secondary Variant */
@@ -202,6 +203,7 @@
 .medium .navIcon {
   width: 24px;
   height: 24px;
+  display: block;
 }
 
 .medium .pageButton {

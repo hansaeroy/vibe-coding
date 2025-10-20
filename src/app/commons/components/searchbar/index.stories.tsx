@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { useState } from 'react';
 import { SearchBar } from './index';
 
@@ -519,7 +519,7 @@ export const Interactive: Story = {
           placeholder='검색어를 입력하고 엔터를 눌러보세요'
         />
         <p style={{ marginTop: '16px', fontSize: '14px', color: '#666' }}>
-          현재 입력값: "{searchValue}"
+          현재 입력값: &quot;{searchValue}&quot;
         </p>
       </div>
     );

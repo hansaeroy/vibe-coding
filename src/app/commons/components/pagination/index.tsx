@@ -104,19 +104,15 @@ const Pagination: React.FC<PaginationProps> = ({
         disabled={isPreviousDisabled}
         aria-label='이전 페이지'
       >
-        <svg
-          width='24'
-          height='24'
-          viewBox='0 0 24 24'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
+        <img
+          src={
+            isPreviousDisabled
+              ? '/icons/leftdisabled_outline_light_m.svg'
+              : '/icons/leftenable_outline_light_m.svg'
+          }
+          alt='이전 페이지'
           className={styles.navIcon}
-        >
-          <path
-            d='M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z'
-            fill='currentColor'
-          />
-        </svg>
+        />
       </button>
 
       {/* 페이지 번호 버튼들 */}
@@ -150,19 +146,15 @@ const Pagination: React.FC<PaginationProps> = ({
         disabled={isNextDisabled}
         aria-label='다음 페이지'
       >
-        <svg
-          width='24'
-          height='24'
-          viewBox='0 0 24 24'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
+        <img
+          src={
+            isNextDisabled
+              ? '/icons/rightdisabled_outline_light_m.svg'
+              : '/icons/rightenable_outline_light_m.svg'
+          }
+          alt='다음 페이지'
           className={styles.navIcon}
-        >
-          <path
-            d='M8.59 16.59L10 18L16 12L10 6L8.59 7.41L13.17 12L8.59 16.59Z'
-            fill='currentColor'
-          />
-        </svg>
+        />
       </button>
     </nav>
   );
