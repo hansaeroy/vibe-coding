@@ -1,0 +1,127 @@
+/* 버튼 기본 스타일 */
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: -0.18px;
+}
+
+/* 사이즈 변형 */
+.size-small {
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  height: 32px;
+}
+
+.size-medium {
+  padding: 8px 16px;
+  font-size: 16px;
+  line-height: 22px;
+  height: 40px;
+}
+
+.size-large {
+  padding: 12px 24px;
+  font-size: 18px;
+  line-height: 24px;
+  height: 48px;
+}
+
+/* 라이트 테마 변형 */
+/* Primary 변형 */
+.theme-light.variant-primary {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.theme-light.variant-primary:hover {
+  background-color: #333333;
+}
+
+.theme-light.variant-primary:active {
+  background-color: #555555;
+}
+
+/* Secondary 변형 */
+.theme-light.variant-secondary {
+  background-color: #e4e4e4;
+  color: #333333;
+}
+
+.theme-light.variant-secondary:hover {
+  background-color: #d4d3d3;
+}
+
+.theme-light.variant-secondary:active {
+  background-color: #c7c7c7;
+}
+
+/* Tertiary 변형 */
+.theme-light.variant-tertiary {
+  background-color: transparent;
+  color: #6da5fa;
+}
+
+.theme-light.variant-tertiary:hover {
+  background-color: rgba(109, 165, 250, 0.1);
+}
+
+.theme-light.variant-tertiary:active {
+  background-color: rgba(109, 165, 250, 0.2);
+}
+
+/* 다크 테마 변형 */
+/* Primary 변형 */
+.theme-dark.variant-primary {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.theme-dark.variant-primary:hover {
+  background-color: #333333;
+}
+
+.theme-dark.variant-primary:active {
+  background-color: #555555;
+}
+
+/* Secondary 변형 */
+.theme-dark.variant-secondary {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.theme-dark.variant-secondary:hover {
+  background-color: #5f5f5f;
+}
+
+.theme-dark.variant-secondary:active {
+  background-color: #777777;
+}
+
+/* Tertiary 변형 */
+.theme-dark.variant-tertiary {
+  background-color: transparent;
+  color: #3a5cf3;
+}
+
+.theme-dark.variant-tertiary:hover {
+  background-color: rgba(58, 92, 243, 0.1);
+}
+
+.theme-dark.variant-tertiary:active {
+  background-color: rgba(58, 92, 243, 0.2);
+}
+
+/* 비활성화 상태 */
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

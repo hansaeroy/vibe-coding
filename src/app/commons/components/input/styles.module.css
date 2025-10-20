@@ -1,0 +1,147 @@
+/* 인풋 기본 스타일 */
+.input {
+  display: flex;
+  align-items: center;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-weight: 500;
+  border: 1px solid;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 사이즈 변형 */
+.size-small {
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  height: 32px;
+}
+
+.size-medium {
+  padding: 8px 16px;
+  font-size: 16px;
+  line-height: 22px;
+  height: 40px;
+}
+
+.size-large {
+  padding: 12px 24px;
+  font-size: 18px;
+  line-height: 24px;
+  height: 48px;
+}
+
+/* 라이트 테마 변형 */
+/* Primary 변형 */
+.theme-light.variant-primary {
+  border-color: #d4d3d3;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.theme-light.variant-primary:hover {
+  border-color: #ababab;
+}
+
+.theme-light.variant-primary:focus {
+  border-color: #6da5fa;
+  outline: none;
+}
+
+/* Secondary 변형 */
+.theme-light.variant-secondary {
+  border-color: #e4e4e4;
+  background-color: #f5f5f5;
+  color: #333333;
+}
+
+.theme-light.variant-secondary:hover {
+  border-color: #d4d3d3;
+}
+
+.theme-light.variant-secondary:focus {
+  border-color: #6da5fa;
+  outline: none;
+}
+
+/* Tertiary 변형 */
+.theme-light.variant-tertiary {
+  border-color: transparent;
+  background-color: transparent;
+  color: #333333;
+  border-bottom: 1px solid #d4d3d3;
+  border-radius: 0;
+}
+
+.theme-light.variant-tertiary:hover {
+  border-bottom-color: #ababab;
+}
+
+.theme-light.variant-tertiary:focus {
+  border-bottom-color: #6da5fa;
+  outline: none;
+}
+
+/* 다크 테마 변형 */
+/* Primary 변형 */
+.theme-dark.variant-primary {
+  border-color: #5f5f5f;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.theme-dark.variant-primary:hover {
+  border-color: #777777;
+}
+
+.theme-dark.variant-primary:focus {
+  border-color: #3a5cf3;
+  outline: none;
+}
+
+/* Secondary 변형 */
+.theme-dark.variant-secondary {
+  border-color: #5f5f5f;
+  background-color: #444444;
+  color: #ffffff;
+}
+
+.theme-dark.variant-secondary:hover {
+  border-color: #777777;
+}
+
+.theme-dark.variant-secondary:focus {
+  border-color: #3a5cf3;
+  outline: none;
+}
+
+/* Tertiary 변형 */
+.theme-dark.variant-tertiary {
+  border-color: transparent;
+  background-color: transparent;
+  color: #ffffff;
+  border-bottom: 1px solid #5f5f5f;
+  border-radius: 0;
+}
+
+.theme-dark.variant-tertiary:hover {
+  border-bottom-color: #777777;
+}
+
+.theme-dark.variant-tertiary:focus {
+  border-bottom-color: #3a5cf3;
+  outline: none;
+}
+
+/* 플레이스홀더 스타일 */
+.input::placeholder {
+  color: #ababab;
+}
+
+/* 비활성화 상태 */
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

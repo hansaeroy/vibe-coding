@@ -1,0 +1,405 @@
+/* 셀렉트 박스 기본 스타일 */
+.selectbox {
+  position: relative;
+  display: inline-block;
+  font-family: 'Pretendard Variable', sans-serif;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  max-width: 320px;
+}
+
+.selectbox.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* 선택된 값 표시 영역 */
+.display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid;
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.text {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.selectbox.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* 드롭다운 리스트 */
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* 옵션 스타일 */
+.option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.option:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.option:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.option.optionDisabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* 사이즈 변형 */
+.size-small .display {
+  padding: 6px 8px;
+  height: 32px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.size-small .arrow {
+  width: 16px;
+  height: 16px;
+}
+
+.size-small .option {
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  min-height: 32px;
+}
+
+.size-medium .display {
+  padding: 8px 12px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.size-medium .arrow {
+  width: 20px;
+  height: 20px;
+}
+
+.size-medium .option {
+  padding: 8px 16px;
+  font-size: 16px;
+  line-height: 22px;
+  min-height: 40px;
+}
+
+.size-large .display {
+  padding: 12px 16px;
+  height: 48px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.size-large .arrow {
+  width: 24px;
+  height: 24px;
+}
+
+.size-large .option {
+  padding: 12px 20px;
+  font-size: 18px;
+  line-height: 24px;
+  min-height: 48px;
+}
+
+/* 라이트 테마 - Primary 변형 */
+.theme-light.variant-primary .display {
+  border-color: #c7c7c7;
+  background-color: #ffffff;
+  color: #1c1c1c;
+}
+
+.theme-light.variant-primary .display:hover {
+  border-color: #6da5fa;
+}
+
+.theme-light.variant-primary.open .display {
+  border-color: #6da5fa;
+  box-shadow: 0 0 0 2px rgba(109, 165, 250, 0.2);
+}
+
+.theme-light.variant-primary .dropdown {
+  border-color: #c7c7c7;
+  background-color: #ffffff;
+}
+
+.theme-light.variant-primary .option {
+  color: #1c1c1c;
+}
+
+.theme-light.variant-primary .option:hover,
+.theme-light.variant-primary .option.focused {
+  background-color: #f0f7ff;
+}
+
+.theme-light.variant-primary .option.selected {
+  background-color: #6da5fa;
+  color: #ffffff;
+}
+
+/* 라이트 테마 - Secondary 변형 */
+.theme-light.variant-secondary .display {
+  border-color: #e4e4e4;
+  background-color: #f2f2f2;
+  color: #333333;
+}
+
+.theme-light.variant-secondary .display:hover {
+  border-color: #c7c7c7;
+  background-color: #e4e4e4;
+}
+
+.theme-light.variant-secondary.open .display {
+  border-color: #c7c7c7;
+  background-color: #ffffff;
+}
+
+.theme-light.variant-secondary .dropdown {
+  border-color: #e4e4e4;
+  background-color: #ffffff;
+}
+
+.theme-light.variant-secondary .option {
+  color: #333333;
+}
+
+.theme-light.variant-secondary .option:hover,
+.theme-light.variant-secondary .option.focused {
+  background-color: #f2f2f2;
+}
+
+.theme-light.variant-secondary .option.selected {
+  background-color: #e4e4e4;
+  color: #333333;
+}
+
+/* 라이트 테마 - Tertiary 변형 */
+.theme-light.variant-tertiary .display {
+  border-color: transparent;
+  background-color: transparent;
+  color: #6da5fa;
+}
+
+.theme-light.variant-tertiary .display:hover {
+  background-color: rgba(109, 165, 250, 0.1);
+}
+
+.theme-light.variant-tertiary.open .display {
+  background-color: rgba(109, 165, 250, 0.1);
+}
+
+.theme-light.variant-tertiary .dropdown {
+  border-color: #c7c7c7;
+  background-color: #ffffff;
+}
+
+.theme-light.variant-tertiary .option {
+  color: #1c1c1c;
+}
+
+.theme-light.variant-tertiary .option:hover,
+.theme-light.variant-tertiary .option.focused {
+  background-color: rgba(109, 165, 250, 0.1);
+}
+
+.theme-light.variant-tertiary .option.selected {
+  background-color: #6da5fa;
+  color: #ffffff;
+}
+
+/* 다크 테마 - Primary 변형 */
+.theme-dark.variant-primary .display {
+  border-color: #5f5f5f;
+  background-color: #1c1c1c;
+  color: #ffffff;
+}
+
+.theme-dark.variant-primary .display:hover {
+  border-color: #3a5cf3;
+}
+
+.theme-dark.variant-primary.open .display {
+  border-color: #3a5cf3;
+  box-shadow: 0 0 0 2px rgba(58, 92, 243, 0.2);
+}
+
+.theme-dark.variant-primary .dropdown {
+  border-color: #5f5f5f;
+  background-color: #333333;
+}
+
+.theme-dark.variant-primary .option {
+  color: #ffffff;
+}
+
+.theme-dark.variant-primary .option:hover,
+.theme-dark.variant-primary .option.focused {
+  background-color: #5f5f5f;
+}
+
+.theme-dark.variant-primary .option.selected {
+  background-color: #3a5cf3;
+  color: #ffffff;
+}
+
+/* 다크 테마 - Secondary 변형 */
+.theme-dark.variant-secondary .display {
+  border-color: #777777;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.theme-dark.variant-secondary .display:hover {
+  border-color: #919191;
+  background-color: #5f5f5f;
+}
+
+.theme-dark.variant-secondary.open .display {
+  border-color: #919191;
+  background-color: #333333;
+}
+
+.theme-dark.variant-secondary .dropdown {
+  border-color: #777777;
+  background-color: #333333;
+}
+
+.theme-dark.variant-secondary .option {
+  color: #ffffff;
+}
+
+.theme-dark.variant-secondary .option:hover,
+.theme-dark.variant-secondary .option.focused {
+  background-color: #5f5f5f;
+}
+
+.theme-dark.variant-secondary .option.selected {
+  background-color: #777777;
+  color: #ffffff;
+}
+
+/* 다크 테마 - Tertiary 변형 */
+.theme-dark.variant-tertiary .display {
+  border-color: transparent;
+  background-color: transparent;
+  color: #3a5cf3;
+}
+
+.theme-dark.variant-tertiary .display:hover {
+  background-color: rgba(58, 92, 243, 0.1);
+}
+
+.theme-dark.variant-tertiary.open .display {
+  background-color: rgba(58, 92, 243, 0.1);
+}
+
+.theme-dark.variant-tertiary .dropdown {
+  border-color: #5f5f5f;
+  background-color: #333333;
+}
+
+.theme-dark.variant-tertiary .option {
+  color: #ffffff;
+}
+
+.theme-dark.variant-tertiary .option:hover,
+.theme-dark.variant-tertiary .option.focused {
+  background-color: rgba(58, 92, 243, 0.1);
+}
+
+.theme-dark.variant-tertiary .option.selected {
+  background-color: #3a5cf3;
+  color: #ffffff;
+}
+
+/* 포커스 상태 */
+.selectbox:focus .display {
+  outline: 2px solid #6da5fa;
+  outline-offset: 2px;
+}
+
+.theme-dark .selectbox:focus .display {
+  outline-color: #3a5cf3;
+}
+
+/* 비활성화 상태 */
+.selectbox.disabled .display {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.selectbox.disabled .arrow {
+  opacity: 0.5;
+}
+
+/* 스크롤바 스타일 */
+.dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.theme-dark .dropdown::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark .dropdown::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}

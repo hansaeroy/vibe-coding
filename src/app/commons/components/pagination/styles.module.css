@@ -1,0 +1,438 @@
+/* 페이지네이션 컴포넌트 스타일 */
+
+/* 기본 페이지네이션 컨테이너 */
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+
+/* 페이지 번호 컨테이너 */
+.pageNumbers {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 공통 버튼 스타일 */
+.navButton,
+.pageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont,
+    system-ui, sans-serif;
+  outline: none;
+  position: relative;
+}
+
+.navButton:focus-visible,
+.pageButton:focus-visible {
+  outline: 2px solid #6da5fa;
+  outline-offset: 2px;
+}
+
+/* 네비게이션 버튼 (이전/다음) */
+.navButton {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border-radius: 4px;
+  color: #777777;
+}
+
+.navButton:hover:not(.navButtonDisabled) {
+  background-color: #f2f2f2;
+  color: #333333;
+}
+
+.navButton:active:not(.navButtonDisabled) {
+  background-color: #e4e4e4;
+}
+
+.navButtonDisabled {
+  color: #c7c7c7;
+  cursor: not-allowed;
+}
+
+.navIcon {
+  width: 24px;
+  height: 24px;
+}
+
+/* 페이지 번호 버튼 */
+.pageButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.16px;
+}
+
+/* 활성 페이지 버튼 */
+.pageButtonActive {
+  background-color: #f2f2f2;
+  color: #000000;
+  font-weight: 500;
+}
+
+.pageButtonActive:hover {
+  background-color: #e4e4e4;
+}
+
+.pageButtonActive:active {
+  background-color: #d4d3d3;
+}
+
+/* 비활성 페이지 버튼 */
+.pageButtonInactive {
+  background-color: #ffffff;
+  color: #777777;
+}
+
+.pageButtonInactive:hover {
+  background-color: #f2f2f2;
+  color: #333333;
+}
+
+.pageButtonInactive:active {
+  background-color: #e4e4e4;
+}
+
+/* ========== VARIANT STYLES ========== */
+
+/* Primary Variant */
+.primary .pageButtonActive {
+  background-color: #6da5fa;
+  color: #ffffff;
+}
+
+.primary .pageButtonActive:hover {
+  background-color: #497cff;
+}
+
+.primary .pageButtonActive:active {
+  background-color: #3a5cf3;
+}
+
+/* Secondary Variant */
+.secondary .pageButtonActive {
+  background-color: #f2f2f2;
+  color: #000000;
+  border: 1px solid #d4d3d3;
+}
+
+.secondary .pageButtonActive:hover {
+  background-color: #e4e4e4;
+  border-color: #c7c7c7;
+}
+
+.secondary .pageButtonInactive {
+  border: 1px solid #e4e4e4;
+}
+
+.secondary .pageButtonInactive:hover {
+  border-color: #d4d3d3;
+}
+
+/* Tertiary Variant */
+.tertiary .pageButtonActive {
+  background-color: transparent;
+  color: #6da5fa;
+  text-decoration: underline;
+}
+
+.tertiary .pageButtonInactive {
+  background-color: transparent;
+}
+
+.tertiary .pageButtonInactive:hover {
+  background-color: #f0f7ff;
+}
+
+/* ========== SIZE STYLES ========== */
+
+/* Small Size */
+.small {
+  gap: 4px;
+}
+
+.small .pageNumbers {
+  gap: 4px;
+}
+
+.small .navButton {
+  width: 20px;
+  height: 20px;
+}
+
+.small .navIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.small .pageButton {
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.14px;
+}
+
+/* Medium Size (기본값) */
+.medium {
+  gap: 8px;
+}
+
+.medium .pageNumbers {
+  gap: 8px;
+}
+
+.medium .navButton {
+  width: 24px;
+  height: 24px;
+}
+
+.medium .navIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.medium .pageButton {
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.16px;
+}
+
+/* Large Size */
+.large {
+  gap: 12px;
+}
+
+.large .pageNumbers {
+  gap: 12px;
+}
+
+.large .navButton {
+  width: 28px;
+  height: 28px;
+}
+
+.large .navIcon {
+  width: 28px;
+  height: 28px;
+}
+
+.large .pageButton {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.18px;
+}
+
+/* ========== THEME STYLES ========== */
+
+/* Light Theme (기본값) */
+.light {
+  color-scheme: light;
+}
+
+.light .pageButtonInactive {
+  background-color: #ffffff;
+  color: #777777;
+}
+
+.light .navButton {
+  color: #777777;
+}
+
+.light .navButton:hover:not(.navButtonDisabled) {
+  background-color: #f2f2f2;
+  color: #333333;
+}
+
+.light .navButtonDisabled {
+  color: #c7c7c7;
+}
+
+/* Dark Theme */
+.dark {
+  /* 다크 테마 배경에서 사용 */
+  color-scheme: dark;
+}
+
+.dark .pageButtonActive {
+  background-color: #6da5fa;
+  color: #ffffff;
+}
+
+.dark .pageButtonInactive {
+  background-color: #333333;
+  color: #c7c7c7;
+}
+
+.dark .pageButtonInactive:hover {
+  background-color: #5f5f5f;
+  color: #ffffff;
+}
+
+.dark .navButton {
+  color: #c7c7c7;
+}
+
+.dark .navButton:hover:not(.navButtonDisabled) {
+  background-color: #5f5f5f;
+  color: #ffffff;
+}
+
+.dark .navButtonDisabled {
+  color: #777777;
+}
+
+/* Secondary variant in dark theme */
+.dark.secondary .pageButtonActive {
+  background-color: #5f5f5f;
+  color: #ffffff;
+  border: 1px solid #777777;
+}
+
+.dark.secondary .pageButtonInactive {
+  border: 1px solid #5f5f5f;
+}
+
+/* Tertiary variant in dark theme */
+.dark.tertiary .pageButtonActive {
+  background-color: transparent;
+  color: #6da5fa;
+}
+
+.dark.tertiary .pageButtonInactive:hover {
+  background-color: rgba(109, 165, 250, 0.1);
+}
+
+/* ========== DISABLED STATE ========== */
+
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.disabled .navButton,
+.disabled .pageButton {
+  cursor: not-allowed;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .pagination {
+    gap: 4px;
+  }
+
+  .pageNumbers {
+    gap: 4px;
+  }
+
+  .navButton {
+    width: 20px;
+    height: 20px;
+  }
+
+  .navIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .pageButton {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* Large 사이즈도 모바일에서는 Medium 크기로 조정 */
+  .large .navButton {
+    width: 24px;
+    height: 24px;
+  }
+
+  .large .navIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .large .pageButton {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+/* 터치 디바이스 대응 */
+@media (hover: none) and (pointer: coarse) {
+  .navButton,
+  .pageButton {
+    min-height: 44px; /* iOS 권장 터치 영역 */
+    min-width: 44px;
+  }
+
+  .small .navButton,
+  .small .pageButton {
+    min-height: 40px;
+    min-width: 40px;
+  }
+}
+
+/* 고대비 모드 지원 */
+@media (prefers-contrast: high) {
+  .pageButtonActive {
+    border: 2px solid currentColor;
+  }
+
+  .pageButtonInactive {
+    border: 1px solid currentColor;
+  }
+
+  .navButton {
+    border: 1px solid currentColor;
+  }
+}
+
+/* 애니메이션 감소 설정 */
+@media (prefers-reduced-motion: reduce) {
+  .navButton,
+  .pageButton {
+    transition: none;
+  }
+}
+
+/* 포커스 표시 개선 */
+@media (prefers-reduced-motion: no-preference) {
+  .navButton:focus-visible,
+  .pageButton:focus-visible {
+    animation: focusPulse 0.3s ease-in-out;
+  }
+}
+
+@keyframes focusPulse {
+  0% {
+    outline-width: 2px;
+  }
+  50% {
+    outline-width: 4px;
+  }
+  100% {
+    outline-width: 2px;
+  }
+}

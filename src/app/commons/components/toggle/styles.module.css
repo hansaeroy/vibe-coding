@@ -1,0 +1,227 @@
+/* 토글 컨테이너 */
+.container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* 숨겨진 체크박스 */
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* 토글 기본 스타일 */
+.toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* 토글 핸들 */
+.handle {
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 4px;
+}
+
+/* 사이즈 변형 - Small */
+.size-small {
+  width: 44px;
+  height: 24px;
+}
+
+.handle-small {
+  width: 16px;
+  height: 16px;
+}
+
+.size-small .handleChecked {
+  left: 24px;
+}
+
+/* 사이즈 변형 - Medium (기본 Figma 사이즈) */
+.size-medium {
+  width: 58px;
+  height: 32px;
+}
+
+.handle-medium {
+  width: 24px;
+  height: 24px;
+}
+
+.size-medium .handleChecked {
+  left: 30px;
+}
+
+/* 사이즈 변형 - Large */
+.size-large {
+  width: 72px;
+  height: 40px;
+}
+
+.handle-large {
+  width: 32px;
+  height: 32px;
+}
+
+.size-large .handleChecked {
+  left: 36px;
+}
+
+/* 라이트 테마 - Primary 변형 */
+.theme-light.variant-primary {
+  background-color: #e4e4e4;
+}
+
+.theme-light.variant-primary.checked {
+  background-color: #3ad84a;
+}
+
+.theme-light.variant-primary:hover {
+  background-color: #d4d3d3;
+}
+
+.theme-light.variant-primary.checked:hover {
+  background-color: #32c441;
+}
+
+/* 라이트 테마 - Secondary 변형 */
+.theme-light.variant-secondary {
+  background-color: #c7c7c7;
+}
+
+.theme-light.variant-secondary.checked {
+  background-color: #6da5fa;
+}
+
+.theme-light.variant-secondary:hover {
+  background-color: #bbbecd;
+}
+
+.theme-light.variant-secondary.checked:hover {
+  background-color: #497cff;
+}
+
+/* 라이트 테마 - Tertiary 변형 */
+.theme-light.variant-tertiary {
+  background-color: #f2f2f2;
+}
+
+.theme-light.variant-tertiary.checked {
+  background-color: #ffb300;
+}
+
+.theme-light.variant-tertiary:hover {
+  background-color: #edeef2;
+}
+
+.theme-light.variant-tertiary.checked:hover {
+  background-color: #eba500;
+}
+
+/* 다크 테마 - Primary 변형 */
+.theme-dark.variant-primary {
+  background-color: #5f5f5f;
+}
+
+.theme-dark.variant-primary.checked {
+  background-color: #3ad84a;
+}
+
+.theme-dark.variant-primary:hover {
+  background-color: #777777;
+}
+
+.theme-dark.variant-primary.checked:hover {
+  background-color: #32c441;
+}
+
+/* 다크 테마 - Secondary 변형 */
+.theme-dark.variant-secondary {
+  background-color: #333333;
+}
+
+.theme-dark.variant-secondary.checked {
+  background-color: #3a5cf3;
+}
+
+.theme-dark.variant-secondary:hover {
+  background-color: #5f5f5f;
+}
+
+.theme-dark.variant-secondary.checked:hover {
+  background-color: #274ae1;
+}
+
+/* 다크 테마 - Tertiary 변형 */
+.theme-dark.variant-tertiary {
+  background-color: #1c1c1c;
+}
+
+.theme-dark.variant-tertiary.checked {
+  background-color: #ffb300;
+}
+
+.theme-dark.variant-tertiary:hover {
+  background-color: #333333;
+}
+
+.theme-dark.variant-tertiary.checked:hover {
+  background-color: #eba500;
+}
+
+/* 핸들 체크 상태 - 각 사이즈별로 위치 조정 */
+.handleChecked {
+  transition: left 0.2s ease;
+}
+
+/* 라벨 스타일 */
+.label {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #333333;
+  user-select: none;
+}
+
+.theme-dark .label {
+  color: #ffffff;
+}
+
+/* 비활성화 상태 */
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.disabled .toggle {
+  cursor: not-allowed;
+}
+
+.container:has(.disabled) {
+  cursor: not-allowed;
+}
+
+/* 포커스 상태 (접근성) */
+.input:focus + .toggle {
+  outline: 2px solid #6da5fa;
+  outline-offset: 2px;
+}
+
+.theme-dark .input:focus + .toggle {
+  outline-color: #3a5cf3;
+}
