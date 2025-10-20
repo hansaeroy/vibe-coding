@@ -7,6 +7,7 @@
 ## ✅ 적용된 설정
 
 ### 1. Git 전역 설정
+
 ```bash
 core.quotepath=false                # 한글 파일명 표시
 core.precomposeunicode=true        # 유니코드 정규화
@@ -18,12 +19,14 @@ svn.pathnameencoding=utf-8         # 경로명 인코딩
 ```
 
 ### 2. 프로젝트 로컬 설정
+
 - `.git/config`에 UTF-8 인코딩 설정 추가
 - `.vscode/settings.json`에 Git Bash 기본 터미널 설정
 - `.editorconfig`에 프로젝트 인코딩 명시
 - `.gitattributes`에 줄바꿈 설정
 
 ### 3. PowerShell 프로필 설정
+
 위치: `C:\Users\han\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`
 
 ```powershell
@@ -57,15 +60,16 @@ git commit -F .git/COMMIT_MSG_TEMP
 ```
 
 **실제 사용 예시:**
+
 ```powershell
 # 변경사항 스테이징
 git add .
 
 # 커밋 메시지 파일 작성 (VS Code나 메모장으로 작성)
 # .git/COMMIT_MSG_TEMP 파일에 다음과 같이 작성:
-# 
+#
 # feat: 새로운 기능 추가
-# 
+#
 # - 기능 1 구현
 # - 기능 2 구현
 
@@ -122,6 +126,7 @@ b0a176e 문서: Git 한글 커밋 가이드 추가
 ## 💡 추가 팁
 
 ### VS Code/Cursor 터미널 변경
+
 1. 터미널 창에서 드롭다운 클릭
 2. "Select Default Profile" 선택
 3. "Git Bash" 선택
@@ -129,7 +134,9 @@ b0a176e 문서: Git 한글 커밋 가이드 추가
 또는 `Ctrl + Shift + P` → "Terminal: Select Default Profile" → "Git Bash"
 
 ### Git GUI 도구 사용
+
 완전히 편하게 사용하려면:
+
 - **GitHub Desktop**
 - **SourceTree**
 - **GitKraken**
@@ -141,4 +148,3 @@ b0a176e 문서: Git 한글 커밋 가이드 추가
 - 모든 파일은 UTF-8 인코딩으로 저장됩니다.
 - `.editorconfig`가 프로젝트 인코딩을 관리합니다.
 - `.gitattributes`가 줄바꿈 처리를 담당합니다.
-
