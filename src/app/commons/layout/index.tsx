@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
+import { ModalProvider } from '../providers/modal/modal.provider';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -7,27 +8,29 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className={styles.container}>
-      {/* Header */}
-      <header className={styles.header}>Header Area</header>
+    <ModalProvider>
+      <div className={styles.container}>
+        {/* Header */}
+        <header className={styles.header}>Header Area</header>
 
-      {/* Gap */}
-      <div className={styles.gap}></div>
+        {/* Gap */}
+        <div className={styles.gap}></div>
 
-      {/* Banner */}
-      <section className={styles.banner}>Banner Area</section>
+        {/* Banner */}
+        <section className={styles.banner}>Banner Area</section>
 
-      {/* Gap */}
-      <div className={styles.gap}></div>
+        {/* Gap */}
+        <div className={styles.gap}></div>
 
-      {/* Navigation */}
-      <nav className={styles.navigation}>Navigation Area</nav>
+        {/* Navigation */}
+        <nav className={styles.navigation}>Navigation Area</nav>
 
-      {/* Children Content */}
-      <main className={styles.children}>{children}</main>
+        {/* Children Content */}
+        <main className={styles.children}>{children}</main>
 
-      {/* Footer */}
-      <footer className={styles.footer}>Footer Area</footer>
-    </div>
+        {/* Footer */}
+        <footer className={styles.footer}>Footer Area</footer>
+      </div>
+    </ModalProvider>
   );
 }
