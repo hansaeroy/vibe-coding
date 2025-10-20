@@ -1,7 +1,26 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## 프로젝트 개요
+
 바이브 코딩 프로젝트 - Next.js 기반 웹 애플리케이션
+
+## Git 한글 커밋 방법
+
+### PowerShell에서 한글 커밋하기
+
+```powershell
+# 방법 1: 헬퍼 스크립트 사용 (권장)
+.\git-commit-helper.ps1 "커밋 메시지" "추가 설명1" "추가 설명2"
+
+# 방법 2: Git 명령어로 직접 커밋
+git add .
+git commit -F .git/commit-msg-utf8.txt  # 메시지를 파일에 작성 후 사용
+```
+
+### VS Code/Cursor에서 커밋하기
+
+1. 터미널을 **Git Bash**로 변경 (이미 `.vscode/settings.json`에 설정됨)
+2. 일반적인 방법으로 커밋: `git commit -m "한글 메시지"`
 
 ## Getting Started
 
