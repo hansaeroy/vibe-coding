@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './styles.module.css';
-import { ModalProvider } from '../providers/modal/modal.provider';
+import React from "react";
+import styles from "./styles.module.css";
+import { ModalProvider } from "../providers/modal/modal.provider";
 
 interface LayoutProps {
   children: React.ReactNode;
