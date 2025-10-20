@@ -4,13 +4,13 @@ import '../src/app/globals.css'; // 글로벌 CSS 스타일 import
 // 스토리북에서 다크모드 미디어 쿼리를 무시하고 항상 라이트 테마 사용
 const storybookStyles = `
   body {
-    background: #ffffff !important;
-    color: #171717 !important;
+    background: #ffffff
+    color: #171717
   }
   
   /* 스토리북 캔버스 영역도 하얀색으로 설정 */
   .sb-show-main {
-    background: #ffffff !important;
+    background: #ffffff
   }
 `;
 
