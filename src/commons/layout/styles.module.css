@@ -1,0 +1,193 @@
+/* Layout Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 1168px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1168px;
+  height: 60px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-color: var(--background-primary);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+}
+
+.logoText {
+  font-family: "Pretendard Variable", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 16px;
+  letter-spacing: -0.18px;
+  color: var(--gray-black);
+}
+
+.darkModeToggle {
+  display: flex;
+  align-items: center;
+  width: 55px;
+  height: 24px;
+}
+
+.darkModeText {
+  font-family: "Pretendard Variable", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.16px;
+  color: var(--gray-90);
+}
+
+/* Gap */
+.gap {
+  width: 1168px;
+  height: 24px;
+}
+
+/* Banner */
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1168px;
+  height: 240px;
+}
+
+.bannerImage {
+  width: 1168px;
+  height: 240px;
+  background-color: #d9d9d9;
+  border-radius: 24px;
+  background-image: url("/images/banner.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Navigation */
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 1168px;
+  height: 48px;
+}
+
+.tabContainer {
+  display: flex;
+  align-items: center;
+  width: 1168px;
+  height: 48px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 119px;
+  height: 48px;
+  cursor: pointer;
+  margin-right: 4px;
+}
+
+.tabActive {
+  border-bottom: 2px solid var(--gray-black);
+}
+
+.tabText {
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: -0.24px;
+  text-align: left;
+}
+
+.tabActive .tabText {
+  font-weight: 700;
+  color: var(--gray-black);
+}
+
+.tab:not(.tabActive) .tabText {
+  font-weight: 500;
+  color: var(--gray-60);
+}
+
+/* Children Content */
+.children {
+  display: flex;
+  flex-direction: column;
+  width: 1168px;
+  flex: 1;
+  min-height: 200px;
+  background-color: var(--background-primary);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 160px;
+  background-color: var(--gray-5);
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  width: 1168px;
+  height: 112px;
+  padding: 24px 0;
+  box-sizing: border-box;
+}
+
+.footerTitle {
+  font-family: "Pretendard Variable", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  color: var(--gray-black);
+  margin: 0 0 32px 0;
+}
+
+.footerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footerRepresentative {
+  font-family: "Pretendard Variable", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.14px;
+  color: var(--gray-70);
+  margin: 0;
+}
+
+.footerCopyright {
+  font-family: "Pretendard Variable", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.14px;
+  color: var(--gray-50);
+  margin: 0;
+}
