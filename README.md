@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## 프로젝트 개요
+바이브 코딩 프로젝트 - Next.js 기반 웹 애플리케이션
+
 ## Getting Started
 
 First, run the development server:
