@@ -1,13 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import SelectBox from "@/commons/components/selectbox";
 import SearchBar from "@/commons/components/searchbar";
 import Button from "@/commons/components/button";
-import {
-  EmotionType,
-  getEmotionInfo,
-} from "@/commons/constants/enum";
+import Pagination from "@/commons/components/pagination";
+import { EmotionType, getEmotionInfo } from "@/commons/constants/enum";
 import styles from "./styles.module.css";
 
 // 일기 데이터 타입 정의
@@ -22,6 +20,10 @@ interface DiaryData {
 export default function Diaries() {
   const [selectedFilter, setSelectedFilter] = useState("all");
   const [searchValue, setSearchValue] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // 페이지당 아이템 수
+  const ITEMS_PER_PAGE = 6;
 
   // Mock 일기 데이터
   const mockDiaries: DiaryData[] = [
@@ -121,11 +123,6 @@ export default function Diaries() {
     { value: "etc", label: "기타" },
   ];
 
-  // 필터 변경 핸들러
-  const handleFilterChange = (value: string) => {
-    setSelectedFilter(value);
-  };
-
   // 검색어 변경 핸들러
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -134,6 +131,18 @@ export default function Diaries() {
   // 검색 실행 핸들러
   const handleSearch = (value: string) => {
     console.log("검색 실행:", value);
+    setCurrentPage(1); // 검색 시 첫 페이지로 이동
+  };
+
+  // 페이지 변경 핸들러
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  // 필터 변경 시 첫 페이지로 이동
+  const handleFilterChangeWithReset = (value: string) => {
+    setSelectedFilter(value);
+    setCurrentPage(1);
   };
 
   // 일기쓰기 버튼 클릭 핸들러
@@ -141,30 +150,45 @@ export default function Diaries() {
     console.log("일기쓰기 버튼 클릭");
   };
 
-  // 필터링된 일기 데이터
-  const filteredDiaries = mockDiaries.filter((diary) => {
-    // 감정 필터 적용
-    if (selectedFilter !== "all") {
-      const emotionMap: Record<string, EmotionType> = {
-        happy: EmotionType.HAPPY,
-        sad: EmotionType.SAD,
-        angry: EmotionType.ANGRY,
-        surprise: EmotionType.SURPRISE,
-        etc: EmotionType.ETC,
-      };
+  // 필터링된 일기 데이터와 페이지네이션 계산
+  const { filteredDiaries, paginatedDiaries, totalPages } = useMemo(() => {
+    // 필터링
+    const filtered = mockDiaries.filter((diary) => {
+      // 감정 필터 적용
+      if (selectedFilter !== "all") {
+        const emotionMap: Record<string, EmotionType> = {
+          happy: EmotionType.HAPPY,
+          sad: EmotionType.SAD,
+          angry: EmotionType.ANGRY,
+          surprise: EmotionType.SURPRISE,
+          etc: EmotionType.ETC,
+        };
 
-      if (diary.emotion !== emotionMap[selectedFilter]) {
-        return false;
+        if (diary.emotion !== emotionMap[selectedFilter]) {
+          return false;
+        }
       }
-    }
 
-    // 검색어 필터 적용
-    if (searchValue.trim()) {
-      return diary.title.toLowerCase().includes(searchValue.toLowerCase());
-    }
+      // 검색어 필터 적용
+      if (searchValue.trim()) {
+        return diary.title.toLowerCase().includes(searchValue.toLowerCase());
+      }
 
-    return true;
-  });
+      return true;
+    });
+
+    // 페이지네이션 계산
+    const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    const paginated = filtered.slice(startIndex, endIndex);
+
+    return {
+      filteredDiaries: filtered,
+      paginatedDiaries: paginated,
+      totalPages,
+    };
+  }, [mockDiaries, selectedFilter, searchValue, currentPage, ITEMS_PER_PAGE]);
 
   return (
     <div className={styles.container}>
@@ -183,7 +207,7 @@ export default function Diaries() {
               theme="light"
               options={filterOptions}
               value={selectedFilter}
-              onChange={handleFilterChange}
+              onChange={handleFilterChangeWithReset}
               placeholder="전체"
               className={styles.filterSelect}
             />
@@ -227,9 +251,9 @@ export default function Diaries() {
 
       {/* Main */}
       <div className={styles.main}>
-        {filteredDiaries.length > 0 ? (
+        {paginatedDiaries.length > 0 ? (
           <div className={styles.diaryGrid}>
-            {filteredDiaries.map((diary) => {
+            {paginatedDiaries.map((diary) => {
               const emotionInfo = getEmotionInfo(diary.emotion);
               return (
                 <div key={diary.id} className={styles.diaryCard}>
@@ -278,7 +302,19 @@ export default function Diaries() {
       <div className={styles.paginationGap}></div>
 
       {/* Pagination */}
-      <div className={styles.pagination}>Pagination Area</div>
+      <div className={styles.pagination}>
+        {totalPages > 1 && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+            variant="primary"
+            size="medium"
+            theme="light"
+            visiblePages={5}
+          />
+        )}
+      </div>
 
       {/* Gap */}
       <div className={styles.paginationGap}></div>
