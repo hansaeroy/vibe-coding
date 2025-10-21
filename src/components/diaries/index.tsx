@@ -7,8 +7,6 @@ import Button from "@/commons/components/button";
 import {
   EmotionType,
   getEmotionInfo,
-  getEmotionImage,
-  ImageSize,
 } from "@/commons/constants/enum";
 import styles from "./styles.module.css";
 
