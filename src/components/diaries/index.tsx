@@ -175,11 +175,8 @@ export default function Diaries() {
     return true;
   });
 
-  // 페이지네이션 계산
+  // 페이지네이션 계산 (표시용)
   const totalPages = Math.ceil(filteredDiaries.length / ITEMS_PER_PAGE);
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
-  const paginatedDiaries = filteredDiaries.slice(startIndex, endIndex);
 
   return (
     <div className={styles.container}>
@@ -242,9 +239,9 @@ export default function Diaries() {
 
       {/* Main */}
       <div className={styles.main}>
-        {paginatedDiaries.length > 0 ? (
+        {filteredDiaries.length > 0 ? (
           <div className={styles.diaryGrid}>
-            {paginatedDiaries.map((diary) => {
+            {filteredDiaries.map((diary) => {
               const emotionInfo = getEmotionInfo(diary.emotion);
               return (
                 <div key={diary.id} className={styles.diaryCard}>
@@ -282,11 +279,11 @@ export default function Diaries() {
               );
             })}
           </div>
-        ) : filteredDiaries.length === 0 ? (
+        ) : (
           <div className={styles.emptyState}>
             <p>조건에 맞는 일기가 없습니다.</p>
           </div>
-        ) : null}
+        )}
       </div>
 
       {/* Gap */}
