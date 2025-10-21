@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Pretendard Variable', sans-serif;
+  font-family: "Pretendard Variable", sans-serif;
   font-weight: 600;
   border: none;
   border-radius: 8px;
@@ -21,14 +21,14 @@
 }
 
 .size-medium {
-  padding: 8px 16px;
+  padding: 8px 10px;
   font-size: 16px;
   line-height: 22px;
   height: 40px;
 }
 
 .size-large {
-  padding: 12px 24px;
+  padding: 8px 10px;
   font-size: 18px;
   line-height: 24px;
   height: 48px;

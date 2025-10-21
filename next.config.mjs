@@ -11,6 +11,13 @@ const nextConfig = {
     }
     return config;
   },
+  // 이미지 최적화 설정
+  images: {
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "attachment",
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    formats: ["image/webp", "image/avif"],
+  },
 };
 
 export default nextConfig;

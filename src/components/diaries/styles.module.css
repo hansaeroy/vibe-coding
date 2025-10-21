@@ -45,8 +45,6 @@
 /* 필터 선택박스 스타일 */
 .filterSelect {
   width: 120px;
-  position: relative;
-  z-index: 10;
 }
 
 /* 검색바 스타일 */
@@ -56,23 +54,7 @@
 
 /* 일기쓰기 버튼 스타일 */
 .writeButton {
-  width: 150px;
-  height: 48px;
-  background-color: var(--gray-black) !important;
-  color: var(--gray-white) !important;
-  border: none;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  font-family: "Pretendard Variable", sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: -0.18px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  width: 110px;
 }
 
 .writeButton:hover {
@@ -90,12 +72,133 @@
 .main {
   width: 1168px;
   height: 936px;
-  background-color: var(--background-secondary);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* 일기 그리드 레이아웃 */
+.diaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 274px);
+  grid-template-rows: repeat(3, 296px);
+  gap: 24px;
+  width: 1168px;
+  height: 936px;
+}
+
+/* 일기 카드 */
+.diaryCard {
+  width: 274px;
+  height: 296px;
+  background-color: var(--background-primary);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 카드 이미지 영역 */
+.cardImage {
+  width: 274px;
+  height: 208px;
+  position: relative;
+  border-radius: 16px 16px 16px 16px;
+  overflow: hidden;
+}
+
+.cardImageImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px 16px 16px 16px;
+}
+
+/* 닫기 버튼 */
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--background-primary);
+  border: none;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--border-light);
-  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.closeButton:hover {
+  opacity: 1;
+}
+
+/* 카드 콘텐츠 */
+.cardContent {
+  width: 274px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 카드 헤더 (감정 + 날짜) */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 258px;
+  height: 24px;
+}
+
+.emotionText {
+  font-family: "Pretendard Variable", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.14px;
+}
+
+.dateText {
+  font-family: "Pretendard Variable", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.14px;
+  color: var(--text-secondary);
+}
+
+/* 카드 제목 */
+.cardTitle {
+  width: 258px;
+  height: 24px;
+  font-family: "Pretendard Variable", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 빈 상태 */
+.emptyState {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyState p {
+  font-family: "Pretendard Variable", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 .pagination {
