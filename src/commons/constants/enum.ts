@@ -1,18 +1,18 @@
-import { colors } from './color';
+import { colors } from "./color";
 
 // 감정 타입 정의
 export enum EmotionType {
-  HAPPY = 'HAPPY',
-  SAD = 'SAD',
-  ANGRY = 'ANGRY',
-  SURPRISE = 'SURPRISE',
-  ETC = 'ETC',
+  HAPPY = "HAPPY",
+  SAD = "SAD",
+  ANGRY = "ANGRY",
+  SURPRISE = "SURPRISE",
+  ETC = "ETC",
 }
 
 // 이미지 사이즈 타입
 export enum ImageSize {
-  MEDIUM = 'M',
-  SMALL = 'S',
+  MEDIUM = "M",
+  SMALL = "S",
 }
 
 // 감정별 상세 정보 인터페이스
@@ -30,47 +30,47 @@ export interface EmotionInfo {
 export const EMOTION_INFO: Record<EmotionType, EmotionInfo> = {
   [EmotionType.HAPPY]: {
     type: EmotionType.HAPPY,
-    label: '행복해요',
+    label: "행복해요",
     color: colors.red[60],
     images: {
-      medium: '/icons/emotion-happy-m.svg',
-      small: '/icons/emotion-happy-s.svg',
+      medium: "/images/emotion-happy-m.png",
+      small: "/images/emotion-happy-s.png",
     },
   },
   [EmotionType.SAD]: {
     type: EmotionType.SAD,
-    label: '슬퍼요',
+    label: "슬퍼요",
     color: colors.blue[60],
     images: {
-      medium: '/icons/emotion-sad-m.svg',
-      small: '/icons/emotion-sad-s.svg',
+      medium: "/images/emotion-sad-m.png",
+      small: "/images/emotion-sad-s.png",
     },
   },
   [EmotionType.ANGRY]: {
     type: EmotionType.ANGRY,
-    label: '화나요',
+    label: "화나요",
     color: colors.gray[60],
     images: {
-      medium: '/icons/emotion-angry-m.svg',
-      small: '/icons/emotion-angry-s.svg',
+      medium: "/images/emotion-angry-m.png",
+      small: "/images/emotion-angry-s.png",
     },
   },
   [EmotionType.SURPRISE]: {
     type: EmotionType.SURPRISE,
-    label: '놀랐어요',
+    label: "놀랐어요",
     color: colors.yellow[60],
     images: {
-      medium: '/icons/emotion-surprise-m.svg',
-      small: '/icons/emotion-surprise-s.svg',
+      medium: "/images/emotion-surprise-m.png",
+      small: "/images/emotion-surprise-s.png",
     },
   },
   [EmotionType.ETC]: {
     type: EmotionType.ETC,
-    label: '기타',
+    label: "기타",
     color: colors.green[60],
     images: {
-      medium: '/icons/emotion-etc-m.svg',
-      small: '/icons/emotion-etc-s.svg',
+      medium: "/images/emotion-etc-m.png",
+      small: "/images/emotion-etc-s.png",
     },
   },
 } as const;
@@ -107,5 +107,5 @@ export const isValidEmotionType = (value: string): value is EmotionType => {
 
 // 타입 가드 함수
 export const isEmotionType = (value: unknown): value is EmotionType => {
-  return typeof value === 'string' && isValidEmotionType(value);
+  return typeof value === "string" && isValidEmotionType(value);
 };
