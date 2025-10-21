@@ -242,9 +242,9 @@ export default function Diaries() {
 
       {/* Main */}
       <div className={styles.main}>
-        {filteredDiaries.length > 0 ? (
+        {paginatedDiaries.length > 0 ? (
           <div className={styles.diaryGrid}>
-            {filteredDiaries.map((diary) => {
+            {paginatedDiaries.map((diary) => {
               const emotionInfo = getEmotionInfo(diary.emotion);
               return (
                 <div key={diary.id} className={styles.diaryCard}>
@@ -282,11 +282,11 @@ export default function Diaries() {
               );
             })}
           </div>
-        ) : (
+        ) : filteredDiaries.length === 0 ? (
           <div className={styles.emptyState}>
             <p>조건에 맞는 일기가 없습니다.</p>
           </div>
-        )}
+        ) : null}
       </div>
 
       {/* Gap */}
@@ -294,7 +294,7 @@ export default function Diaries() {
 
       {/* Pagination */}
       <div className={styles.pagination}>
-        {totalPages > 1 && (
+        {filteredDiaries.length > 0 && totalPages > 1 && (
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
