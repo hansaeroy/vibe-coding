@@ -28,7 +28,7 @@
 }
 
 .size-large {
-  padding: 8px 10px;
+  padding: 10px 8px;
   font-size: 18px;
   line-height: 24px;
   height: 48px;
@@ -37,87 +37,88 @@
 /* 라이트 테마 변형 */
 /* Primary 변형 */
 .theme-light.variant-primary {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--gray-black);
+  color: var(--gray-white);
 }
 
 .theme-light.variant-primary:hover {
-  background-color: #333333;
+  background-color: var(--gray-80);
 }
 
 .theme-light.variant-primary:active {
-  background-color: #555555;
+  background-color: var(--gray-70);
 }
 
 /* Secondary 변형 */
 .theme-light.variant-secondary {
-  background-color: #e4e4e4;
-  color: #333333;
+  background-color: var(--gray-white);
+  color: var(--gray-70);
+  border: 1px solid var(--gray-40);
 }
 
 .theme-light.variant-secondary:hover {
-  background-color: #d4d3d3;
+  background-color: var(--gray-20);
 }
 
 .theme-light.variant-secondary:active {
-  background-color: #c7c7c7;
+  background-color: var(--gray-30);
 }
 
 /* Tertiary 변형 */
 .theme-light.variant-tertiary {
   background-color: transparent;
-  color: #6da5fa;
+  color: var(--blue-40);
 }
 
 .theme-light.variant-tertiary:hover {
-  background-color: rgba(109, 165, 250, 0.1);
+  background-color: var(--blue-5);
 }
 
 .theme-light.variant-tertiary:active {
-  background-color: rgba(109, 165, 250, 0.2);
+  background-color: var(--blue-10);
 }
 
 /* 다크 테마 변형 */
 /* Primary 변형 */
 .theme-dark.variant-primary {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--gray-black);
+  color: var(--gray-white);
 }
 
 .theme-dark.variant-primary:hover {
-  background-color: #333333;
+  background-color: var(--gray-80);
 }
 
 .theme-dark.variant-primary:active {
-  background-color: #555555;
+  background-color: var(--gray-70);
 }
 
 /* Secondary 변형 */
 .theme-dark.variant-secondary {
-  background-color: #333333;
-  color: #ffffff;
+  background-color: var(--gray-80);
+  color: var(--gray-white);
 }
 
 .theme-dark.variant-secondary:hover {
-  background-color: #5f5f5f;
+  background-color: var(--gray-70);
 }
 
 .theme-dark.variant-secondary:active {
-  background-color: #777777;
+  background-color: var(--gray-60);
 }
 
 /* Tertiary 변형 */
 .theme-dark.variant-tertiary {
   background-color: transparent;
-  color: #3a5cf3;
+  color: var(--blue-60);
 }
 
 .theme-dark.variant-tertiary:hover {
-  background-color: rgba(58, 92, 243, 0.1);
+  background-color: var(--blue-90);
 }
 
 .theme-dark.variant-tertiary:active {
-  background-color: rgba(58, 92, 243, 0.2);
+  background-color: var(--blue-80);
 }
 
 /* 비활성화 상태 */

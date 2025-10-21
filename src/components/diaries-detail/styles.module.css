@@ -1,0 +1,277 @@
+/* 다이어리 상세페이지 스타일 */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Gap 영역들 */
+.gap {
+  width: 1168px;
+  height: 64px;
+}
+
+.gap24 {
+  width: 1168px;
+  height: 24px;
+}
+
+.gap16 {
+  width: 1168px;
+  height: 16px;
+}
+
+/* Detail Title 영역 */
+.detailTitle {
+  width: 1168px;
+  height: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.titleSection {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--gray-black);
+}
+
+.title {
+  /* headline02: 22px, 30px, 800 - Figma와 가장 유사 */
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 24px; /* Figma 디자인에 맞춤 */
+  letter-spacing: -0.22px; /* Figma 디자인에 맞춤 */
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.emotionAndDate {
+  width: 100%;
+  height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.emotionSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.emotionIcon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emotionText {
+  /* headline03: 20px, 28px, 700 - Figma와 가장 유사 */
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  font-size: 20px;
+  font-weight: 600; /* Figma 디자인에 맞춤 */
+  line-height: 24px; /* Figma 디자인에 맞춤 */
+  letter-spacing: -0.2px; /* Figma 디자인에 맞춤 */
+  color: var(--red-30);
+}
+
+.dateSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dateText,
+.writtenText {
+  /* body02Small: 14px, 20px, 400 - Figma와 일치 */
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.14px; /* Figma 디자인에 맞춤 */
+  color: var(--gray-50);
+}
+
+/* Detail Content 영역 */
+.detailContent {
+  width: 1168px;
+  height: 169px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contentArea {
+  width: 100%;
+  height: 133px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.contentLabel {
+  /* subtitle01: 14px, 22px, 600 -> 16px로 조정하여 Figma와 일치 */
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.16px; /* Figma 디자인에 맞춤 */
+  color: var(--text-primary);
+}
+
+.contentText {
+  /* body01: 16px, 24px, 500 -> line-height 20px로 조정하여 Figma와 일치 */
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.16px; /* Figma 디자인에 맞춤 */
+  color: var(--gray-80);
+  height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.copySection {
+  width: 100%;
+  height: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.copyButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.copyText {
+  /* body01Regular: 16px, 22px, 400 -> line-height 24px로 조정하여 Figma와 일치 */
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.16px; /* Figma 디자인에 맞춤 */
+  color: var(--gray-90);
+}
+
+/* Detail Footer 영역 */
+.detailFooter {
+  width: 1168px;
+  height: 56px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid var(--gray-black);
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.buttonWidth {
+  width: 53px;
+}
+
+/* Retrospect Input 영역 */
+.retrospectInput {
+  width: 1168px;
+  height: 85px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.retrospectInputLabel {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+  color: var(--text-primary);
+}
+
+.retrospectInputRow {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.retrospectInputField {
+  flex: 1;
+  height: 48px !important;
+}
+
+.retrospectInputButton {
+  width: 51px;
+}
+
+/* Retrospect List 영역 */
+.retrospectList {
+  width: 1168px;
+  display: flex;
+  flex-direction: column;
+}
+
+.retrospectItem {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gray-10);
+}
+
+.retrospectItem:last-child {
+  border-bottom: none;
+}
+
+.retrospectText {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.16px;
+  color: var(--text-primary);
+}
+
+.retrospectDate {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.16px;
+  color: var(--gray-60);
+}

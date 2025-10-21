@@ -1,5 +1,5 @@
-import React, { ButtonHTMLAttributes } from 'react';
-import styles from './styles.module.css';
+import React, { ButtonHTMLAttributes } from "react";
+import styles from "./styles.module.css";
 
 // 버튼 컴포넌트 props 타입 정의
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -7,19 +7,19 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    * 버튼 스타일 변형
    * @default 'primary'
    */
-  variant?: 'primary' | 'secondary' | 'tertiary';
+  variant?: "primary" | "secondary" | "tertiary";
 
   /**
    * 버튼 크기
    * @default 'medium'
    */
-  size?: 'small' | 'medium' | 'large';
+  size?: "small" | "medium" | "large";
 
   /**
    * 테마 모드
    * @default 'light'
    */
-  theme?: 'light' | 'dark';
+  theme?: "light" | "dark";
 
   /**
    * 버튼 내부 콘텐츠
@@ -31,9 +31,9 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
  * 기본 버튼 컴포넌트
  */
 export const Button = ({
-  variant = 'primary',
-  size = 'medium',
-  theme = 'light',
+  variant = "primary",
+  size = "medium",
+  theme = "light",
   children,
   className,
   ...props
@@ -47,7 +47,7 @@ export const Button = ({
     className,
   ]
     .filter(Boolean)
-    .join(' ');
+    .join(" ");
 
   return (
     <button className={buttonClasses} {...props}>
