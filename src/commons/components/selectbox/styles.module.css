@@ -2,7 +2,7 @@
 .selectbox {
   position: relative;
   display: inline-block;
-  font-family: 'Pretendard Variable', sans-serif;
+  font-family: "Pretendard Variable", sans-serif;
   cursor: pointer;
   outline: none;
   width: 100%;
@@ -48,6 +48,11 @@
 
 /* 드롭다운 리스트 */
 .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   width: 100%;
