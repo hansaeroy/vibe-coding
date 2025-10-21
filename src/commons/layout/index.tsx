@@ -7,41 +7,43 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className={styles.container}>
-      {/* Header */}
-      <header className={styles.header}>
-        <div className={styles.logo}>
-          <span className={styles.logoText}>민지의 다이어리</span>
-        </div>
-      </header>
-
-      {/* Gap */}
-      <div className={styles.gap}></div>
-
-      {/* Banner */}
-      <section className={styles.banner}>
-        <div className={styles.bannerImage}></div>
-      </section>
-
-      {/* Gap */}
-      <div className={styles.gap}></div>
-
-      {/* Navigation */}
-      <nav className={styles.navigation}>
-        <div className={styles.tabContainer}>
-          <div className={`${styles.tab} ${styles.tabActive}`}>
-            <span className={styles.tabText}>일기보관함</span>
+    <>
+      <div className={styles.container}>
+        {/* Header */}
+        <header className={styles.header}>
+          <div className={styles.logo}>
+            <span className={styles.logoText}>민지의 다이어리</span>
           </div>
-          <div className={styles.tab}>
-            <span className={styles.tabText}>사진보관함</span>
+        </header>
+
+        {/* Gap */}
+        <div className={styles.gap}></div>
+
+        {/* Banner */}
+        <section className={styles.banner}>
+          <div className={styles.bannerImage}></div>
+        </section>
+
+        {/* Gap */}
+        <div className={styles.gap}></div>
+
+        {/* Navigation */}
+        <nav className={styles.navigation}>
+          <div className={styles.tabContainer}>
+            <div className={`${styles.tab} ${styles.tabActive}`}>
+              <span className={styles.tabText}>일기보관함</span>
+            </div>
+            <div className={styles.tab}>
+              <span className={styles.tabText}>사진보관함</span>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
 
-      {/* Children Content */}
-      <main className={styles.children}>{children}</main>
+        {/* Children Content */}
+        <main className={styles.children}>{children}</main>
+      </div>
 
-      {/* Footer */}
+      {/* Footer - 컨테이너 밖으로 이동하여 전체 넓이 차지 */}
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
           <h3 className={styles.footerTitle}>민지의 다이어리</h3>
@@ -53,6 +55,6 @@ export default function Layout({ children }: LayoutProps) {
           </div>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
