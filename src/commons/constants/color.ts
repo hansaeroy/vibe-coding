@@ -4,92 +4,92 @@
 export const colors = {
   // Blue 계열
   blue: {
-    5: '#f0f7ff',
-    10: '#dbeeff',
-    20: '#bddbff',
-    30: '#93beff',
-    40: '#6da5fa', // System color
-    50: '#497cff',
-    60: '#3a5cf3', // System color
-    70: '#274ae1',
-    80: '#1530a6',
-    90: '#0b2184',
+    5: "#f0f7ff",
+    10: "#dbeeff",
+    20: "#bddbff",
+    30: "#93beff",
+    40: "#6da5fa", // System color
+    50: "#497cff",
+    60: "#3a5cf3", // System color
+    70: "#274ae1",
+    80: "#1530a6",
+    90: "#0b2184",
   },
 
   // Gray 계열
   gray: {
-    white: '#ffffff',
-    5: '#f2f2f2',
-    10: '#e4e4e4',
-    20: '#d4d3d3',
-    30: '#c7c7c7',
-    40: '#ababab',
-    50: '#919191',
-    60: '#777777',
-    70: '#5f5f5f',
-    80: '#333333',
-    90: '#1c1c1c',
-    black: '#000000',
+    white: "#ffffff",
+    5: "#f2f2f2",
+    10: "#e4e4e4",
+    20: "#d4d3d3",
+    30: "#c7c7c7",
+    40: "#ababab",
+    50: "#919191",
+    60: "#777777",
+    70: "#5f5f5f",
+    80: "#333333",
+    90: "#1c1c1c",
+    black: "#000000",
   },
 
   // Red 계열 (Error color)
   red: {
-    5: '#fdd7dc',
-    10: '#f797a4',
-    20: '#f4677a',
-    30: '#f03851', // Error color
-    40: '#e4112e',
-    50: '#b40e24',
-    60: '#850a1b',
+    5: "#fdd7dc",
+    10: "#f797a4",
+    20: "#f4677a",
+    30: "#f03851", // Error color
+    40: "#e4112e",
+    50: "#b40e24",
+    60: "#850a1b",
   },
 
   // Green 계열 (Success color)
   green: {
-    5: '#d3f3e0',
-    10: '#92e6b9',
-    20: '#15d66f',
-    30: '#12b75f', // Success color
-    40: '#109c51',
-    50: '#0e723c',
-    60: '#084424',
+    5: "#d3f3e0",
+    10: "#92e6b9",
+    20: "#15d66f",
+    30: "#12b75f", // Success color
+    40: "#109c51",
+    50: "#0e723c",
+    60: "#084424",
   },
 
   // Yellow 계열
   yellow: {
-    5: '#ffe499',
-    10: '#ffd666',
-    20: '#ffc933',
-    30: '#ffb300',
-    40: '#eba500',
-    50: '#d69600',
-    60: '#b27d00',
+    5: "#ffe499",
+    10: "#ffd666",
+    20: "#ffc933",
+    30: "#ffb300",
+    40: "#eba500",
+    50: "#d69600",
+    60: "#b27d00",
   },
 
   // Cool Gray 계열
   coolGray: {
-    1: '#f8f8fa',
-    5: '#f6f6f9',
-    10: '#edeef2',
-    20: '#dddfe5',
-    30: '#d2d4dd',
-    40: '#c7c9d5',
-    50: '#bbbecd',
-    60: '#b0b3c4',
+    1: "#f8f8fa",
+    5: "#f6f6f9",
+    10: "#edeef2",
+    20: "#dddfe5",
+    30: "#d2d4dd",
+    40: "#c7c9d5",
+    50: "#bbbecd",
+    60: "#b0b3c4",
   },
 
   // 그라데이션 (CSS에서 사용)
   gradient: {
-    primary: 'linear-gradient(135deg, #6da5fa 0%, #92eaf5 100%)',
+    primary: "linear-gradient(135deg, #6da5fa 0%, #92eaf5 100%)",
     skeleton:
-      'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.6) 48.5%, transparent 100%)',
+      "linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.6) 48.5%, transparent 100%)",
   },
 } as const;
 
 // 시맨틱 컬러 (용도별 색상)
 export const semanticColors = {
   // 시스템 컬러
-  primary: colors.blue[40], // #6da5fa
-  primaryDark: colors.blue[60], // #3a5cf3
+  primary: colors.gray.black, // #000000
+  primaryDark: colors.gray[50], // #919191
 
   // 상태 컬러
   success: colors.green[30], // #12b75f

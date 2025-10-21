@@ -67,8 +67,8 @@
   --cool-gray-60: #b0b3c4;
 
   /* 시맨틱 컬러 (라이트 모드) */
-  --color-primary: var(--blue-40);
-  --color-primary-dark: var(--blue-60);
+  --color-primary: var(--gray-black);
+  --color-primary-dark: var(--gray-50);
   --color-success: var(--green-30);
   --color-error: var(--red-30);
   --color-warning: var(--yellow-30);
