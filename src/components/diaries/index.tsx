@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import SelectBox from "@/commons/components/selectbox";
 import SearchBar from "@/commons/components/searchbar";
 import Button from "@/commons/components/button";
@@ -150,45 +150,36 @@ export default function Diaries() {
     console.log("일기쓰기 버튼 클릭");
   };
 
-  // 필터링된 일기 데이터와 페이지네이션 계산
-  const { filteredDiaries, paginatedDiaries, totalPages } = useMemo(() => {
-    // 필터링
-    const filtered = mockDiaries.filter((diary) => {
-      // 감정 필터 적용
-      if (selectedFilter !== "all") {
-        const emotionMap: Record<string, EmotionType> = {
-          happy: EmotionType.HAPPY,
-          sad: EmotionType.SAD,
-          angry: EmotionType.ANGRY,
-          surprise: EmotionType.SURPRISE,
-          etc: EmotionType.ETC,
-        };
+  // 필터링된 일기 데이터
+  const filteredDiaries = mockDiaries.filter((diary) => {
+    // 감정 필터 적용
+    if (selectedFilter !== "all") {
+      const emotionMap: Record<string, EmotionType> = {
+        happy: EmotionType.HAPPY,
+        sad: EmotionType.SAD,
+        angry: EmotionType.ANGRY,
+        surprise: EmotionType.SURPRISE,
+        etc: EmotionType.ETC,
+      };
 
-        if (diary.emotion !== emotionMap[selectedFilter]) {
-          return false;
-        }
+      if (diary.emotion !== emotionMap[selectedFilter]) {
+        return false;
       }
+    }
 
-      // 검색어 필터 적용
-      if (searchValue.trim()) {
-        return diary.title.toLowerCase().includes(searchValue.toLowerCase());
-      }
+    // 검색어 필터 적용
+    if (searchValue.trim()) {
+      return diary.title.toLowerCase().includes(searchValue.toLowerCase());
+    }
 
-      return true;
-    });
+    return true;
+  });
 
-    // 페이지네이션 계산
-    const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const endIndex = startIndex + ITEMS_PER_PAGE;
-    const paginated = filtered.slice(startIndex, endIndex);
-
-    return {
-      filteredDiaries: filtered,
-      paginatedDiaries: paginated,
-      totalPages,
-    };
-  }, [mockDiaries, selectedFilter, searchValue, currentPage, ITEMS_PER_PAGE]);
+  // 페이지네이션 계산
+  const totalPages = Math.ceil(filteredDiaries.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const paginatedDiaries = filteredDiaries.slice(startIndex, endIndex);
 
   return (
     <div className={styles.container}>
@@ -251,9 +242,9 @@ export default function Diaries() {
 
       {/* Main */}
       <div className={styles.main}>
-        {paginatedDiaries.length > 0 ? (
+        {filteredDiaries.length > 0 ? (
           <div className={styles.diaryGrid}>
-            {paginatedDiaries.map((diary) => {
+            {filteredDiaries.map((diary) => {
               const emotionInfo = getEmotionInfo(diary.emotion);
               return (
                 <div key={diary.id} className={styles.diaryCard}>
