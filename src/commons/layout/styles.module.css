@@ -24,9 +24,10 @@
   align-items: center;
   width: 120px;
   height: 40px;
+  cursor: pointer;
 }
 
-.logoText {
+.logo-text {
   font-family: "Pretendard Variable", sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -35,14 +36,14 @@
   color: var(--gray-black);
 }
 
-.darkModeToggle {
+.dark-mode-toggle {
   display: flex;
   align-items: center;
   width: 55px;
   height: 24px;
 }
 
-.darkModeText {
+.dark-mode-text {
   font-family: "Pretendard Variable", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -66,7 +67,7 @@
   height: 240px;
 }
 
-.bannerImage {
+.banner-image {
   width: 1168px;
   height: 240px;
   background-color: #d9d9d9;
@@ -86,7 +87,7 @@
   height: 48px;
 }
 
-.tabContainer {
+.tab-container {
   display: flex;
   align-items: center;
   width: 1168px;
@@ -103,11 +104,11 @@
   margin-right: 4px;
 }
 
-.tabActive {
+.tab-active {
   border-bottom: 2px solid var(--gray-black);
 }
 
-.tabText {
+.tab-text {
   font-family: "Pretendard Variable", sans-serif;
   font-size: 24px;
   line-height: 24px;
@@ -115,12 +116,12 @@
   text-align: left;
 }
 
-.tabActive .tabText {
+.tab-active .tab-text {
   font-weight: 700;
   color: var(--gray-black);
 }
 
-.tab:not(.tabActive) .tabText {
+.tab:not(.tab-active) .tab-text {
   font-weight: 500;
   color: var(--gray-60);
 }
@@ -146,7 +147,7 @@
   background-color: var(--gray-5);
 }
 
-.footerContent {
+.footer-content {
   display: flex;
   flex-direction: column;
   width: 1168px;
@@ -155,7 +156,7 @@
   box-sizing: border-box;
 }
 
-.footerTitle {
+.footer-title {
   font-family: "Pretendard Variable", sans-serif;
   font-weight: 700;
   font-size: 20px;
@@ -165,13 +166,13 @@
   margin: 0 0 32px 0;
 }
 
-.footerInfo {
+.footer-info {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.footerRepresentative {
+.footer-representative {
   font-family: "Pretendard Variable", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -181,7 +182,7 @@
   margin: 0;
 }
 
-.footerCopyright {
+.footer-copyright {
   font-family: "Pretendard Variable", sans-serif;
   font-weight: 300;
   font-size: 14px;

@@ -1,18 +1,32 @@
+"use client";
+
 import React from "react";
 import styles from "./styles.module.css";
+import { useLinkRouting } from "./hook/index.link.routing.hook";
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
+  const {
+    navigateToDiary,
+    navigateToPicture,
+    navigateToHome,
+    isActiveTab,
+  } = useLinkRouting();
+
   return (
     <>
       <div className={styles.container}>
         {/* Header */}
         <header className={styles.header}>
-          <div className={styles.logo}>
-            <span className={styles.logoText}>민지의 다이어리</span>
+          <div
+            className={styles.logo}
+            onClick={navigateToHome}
+            data-testid="header-logo"
+          >
+            <span className={styles["logo-text"]}>민지의 다이어리</span>
           </div>
         </header>
 
@@ -21,7 +35,7 @@ export default function Layout({ children }: LayoutProps) {
 
         {/* Banner */}
         <section className={styles.banner}>
-          <div className={styles.bannerImage}></div>
+          <div className={styles["banner-image"]}></div>
         </section>
 
         {/* Gap */}
@@ -29,12 +43,24 @@ export default function Layout({ children }: LayoutProps) {
 
         {/* Navigation */}
         <nav className={styles.navigation}>
-          <div className={styles.tabContainer}>
-            <div className={`${styles.tab} ${styles.tabActive}`}>
-              <span className={styles.tabText}>일기보관함</span>
+          <div className={styles["tab-container"]}>
+            <div
+              className={`${styles.tab} ${
+                isActiveTab("diary") ? styles["tab-active"] : ""
+              }`}
+              onClick={navigateToDiary}
+              data-testid="diary-tab"
+            >
+              <span className={styles["tab-text"]}>일기보관함</span>
             </div>
-            <div className={styles.tab}>
-              <span className={styles.tabText}>사진보관함</span>
+            <div
+              className={`${styles.tab} ${
+                isActiveTab("picture") ? styles["tab-active"] : ""
+              }`}
+              onClick={navigateToPicture}
+              data-testid="picture-tab"
+            >
+              <span className={styles["tab-text"]}>사진보관함</span>
             </div>
           </div>
         </nav>
@@ -45,11 +71,11 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Footer - 컨테이너 밖으로 이동하여 전체 넓이 차지 */}
       <footer className={styles.footer}>
-        <div className={styles.footerContent}>
-          <h3 className={styles.footerTitle}>민지의 다이어리</h3>
-          <div className={styles.footerInfo}>
-            <p className={styles.footerRepresentative}>대표 : {"{name}"}</p>
-            <p className={styles.footerCopyright}>
+        <div className={styles["footer-content"]}>
+          <h3 className={styles["footer-title"]}>민지의 다이어리</h3>
+          <div className={styles["footer-info"]}>
+            <p className={styles["footer-representative"]}>대표 : {"{name}"}</p>
+            <p className={styles["footer-copyright"]}>
               Copyright © 2024. {"{name}"} Co., Ltd.
             </p>
           </div>
