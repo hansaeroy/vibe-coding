@@ -8,6 +8,7 @@ import {
   ReactNode,
 } from "react";
 import { createPortal } from "react-dom";
+import styles from "./modal.provider.module.css";
 
 interface ModalContextType {
   isOpen: boolean;
@@ -77,12 +78,12 @@ export function ModalProvider({ children }: ModalProviderProps) {
       {mounted && isOpen && content
         ? createPortal(
             <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+              className={styles.modalOverlay}
               onClick={closeModal}
               data-testid="modal-overlay"
             >
               <div
-                className="relative bg-white dark:bg-gray-800 rounded-lg shadow-xl"
+                className={styles.modalContainer}
                 onClick={(e) => e.stopPropagation()}
                 data-testid="diary-modal"
               >

@@ -35,7 +35,10 @@ export default function DiariesNew() {
   };
 
   return (
-    <div className={`${styles.wrapper} absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`} data-testid="diary-form">
+    <div
+      className={`${styles.wrapper} absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+      data-testid="diary-form"
+    >
       {/* Header */}
       <div className={styles.header}>
         <h1 className={styles.headerTitle}>일기 쓰기</h1>
