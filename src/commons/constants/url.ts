@@ -2,8 +2,8 @@
 
 // 접근 가능 상태 타입
 export enum AccessType {
-  PUBLIC = 'PUBLIC', // 누구나
-  MEMBERS_ONLY = 'MEMBERS_ONLY', // 회원전용
+  PUBLIC = "PUBLIC", // 누구나
+  MEMBERS_ONLY = "MEMBERS_ONLY", // 회원전용
 }
 
 // 노출 가능 컴포넌트 설정 인터페이스
@@ -27,24 +27,41 @@ export interface PageInfo {
 
 // URL 경로 상수
 export const ROUTES = {
+  // 메인 페이지
+  HOME: "/",
   // 인증 관련
   AUTH: {
-    LOGIN: '/auth/login',
-    SIGNUP: '/auth/signup',
+    LOGIN: "/auth/login",
+    SIGNUP: "/auth/signup",
   },
   // 일기 관련
   DIARY: {
-    LIST: '/diaries',
-    DETAIL: (id?: string) => `/diaries/${id || '[id]'}`,
+    LIST: "/diaries",
+    DETAIL: (id?: string) => `/diaries/${id || "[id]"}`,
   },
   // 사진 관련
   PICTURE: {
-    LIST: '/pictures',
+    LIST: "/pictures",
   },
 } as const;
 
 // 페이지별 상세 정보
 export const PAGE_INFO: Record<string, PageInfo> = {
+  // 메인 페이지
+  [ROUTES.HOME]: {
+    path: ROUTES.HOME,
+    accessType: AccessType.PUBLIC,
+    layout: {
+      header: {
+        visible: true,
+        logo: true,
+        darkModeToggle: false,
+      },
+      banner: true,
+      navigation: true,
+      footer: true,
+    },
+  },
   // 인증 페이지
   [ROUTES.AUTH.LOGIN]: {
     path: ROUTES.AUTH.LOGIN,
@@ -90,8 +107,8 @@ export const PAGE_INFO: Record<string, PageInfo> = {
     },
   },
   // 일기 상세 페이지는 동적 라우팅이므로 키를 기본 패턴으로 설정
-  '/diaries/[id]': {
-    path: '/diaries/[id]',
+  "/diaries/[id]": {
+    path: "/diaries/[id]",
     accessType: AccessType.MEMBERS_ONLY,
     layout: {
       header: {
@@ -124,8 +141,8 @@ export const PAGE_INFO: Record<string, PageInfo> = {
 // 헬퍼 함수
 export const getPageInfo = (path: string): PageInfo | undefined => {
   // 동적 라우팅 경로 처리 (예: /diaries/123 -> /diaries/[id])
-  if (path.startsWith('/diaries/') && path !== ROUTES.DIARY.LIST) {
-    return PAGE_INFO['/diaries/[id]'];
+  if (path.startsWith("/diaries/") && path !== ROUTES.DIARY.LIST) {
+    return PAGE_INFO["/diaries/[id]"];
   }
 
   return PAGE_INFO[path];

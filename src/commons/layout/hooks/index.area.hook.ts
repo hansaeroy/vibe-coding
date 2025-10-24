@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
-import { getLayoutVisibility, LayoutVisibility } from "@/commons/constants/url";
+import { getLayoutVisibility } from "@/commons/constants/url";
 
 // 영역별 가시성 상태 타입
 export interface AreaVisibility {
