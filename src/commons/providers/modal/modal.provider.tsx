@@ -77,14 +77,37 @@ export function ModalProvider({ children }: ModalProviderProps) {
       {mounted && isOpen && content
         ? createPortal(
             <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+              className="fixed inset-0 z-[9999] bg-black/50"
               onClick={closeModal}
               data-testid="modal-overlay"
+              style={{
+                zIndex: 9999,
+                position: "fixed",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "1rem",
+              }}
             >
               <div
-                className="relative bg-white dark:bg-gray-800 rounded-lg shadow-xl"
+                className="bg-white dark:bg-gray-800 rounded-lg shadow-xl"
                 onClick={(e) => e.stopPropagation()}
                 data-testid="diary-modal"
+                style={{
+                  zIndex: 10000,
+                  backgroundColor: "white",
+                  borderRadius: "8px",
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                  maxWidth: "28rem",
+                  width: "100%",
+                  maxHeight: "90vh",
+                  overflow: "auto",
+                }}
               >
                 {content}
               </div>
