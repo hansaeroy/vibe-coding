@@ -9,6 +9,7 @@ import {
   EMOTION_INFO,
   ALL_EMOTION_TYPES,
 } from "@/commons/constants/enum";
+import { useModal } from "@/commons/providers/modal/modal.provider";
 
 export default function DiariesNew() {
   const [selectedEmotion, setSelectedEmotion] = useState<EmotionType | null>(
@@ -17,13 +18,15 @@ export default function DiariesNew() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
+  // 모달 훅 사용
+  const { closeModal } = useModal();
+
   const handleEmotionChange = (emotion: EmotionType) => {
     setSelectedEmotion(emotion);
   };
 
   const handleClose = () => {
-    // 닫기 로직
-    console.log("닫기 버튼 클릭");
+    closeModal();
   };
 
   const handleSubmit = () => {
@@ -32,7 +35,7 @@ export default function DiariesNew() {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-testid="diary-form">
       {/* Header */}
       <div className={styles.header}>
         <h1 className={styles.headerTitle}>일기 쓰기</h1>
@@ -108,6 +111,7 @@ export default function DiariesNew() {
           theme="light"
           onClick={handleClose}
           className={styles.closeButton}
+          data-testid="close-modal-button"
         >
           닫기
         </Button>

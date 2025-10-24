@@ -6,6 +6,7 @@ import SearchBar from "@/commons/components/searchbar";
 import Button from "@/commons/components/button";
 import Pagination from "@/commons/components/pagination";
 import { EmotionType, getEmotionInfo } from "@/commons/constants/enum";
+import { useLinkModal } from "./hooks/index.link.modal.hook";
 import styles from "./styles.module.css";
 
 // 일기 데이터 타입 정의
@@ -21,6 +22,9 @@ export default function Diaries() {
   const [selectedFilter, setSelectedFilter] = useState("all");
   const [searchValue, setSearchValue] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+
+  // 모달 훅 사용
+  const { openDiaryModal } = useLinkModal();
 
   // 페이지당 아이템 수
   const ITEMS_PER_PAGE = 6;
@@ -147,7 +151,7 @@ export default function Diaries() {
 
   // 일기쓰기 버튼 클릭 핸들러
   const handleWriteDiary = () => {
-    console.log("일기쓰기 버튼 클릭");
+    openDiaryModal();
   };
 
   // 필터링된 일기 데이터
@@ -179,7 +183,7 @@ export default function Diaries() {
   const totalPages = Math.ceil(filteredDiaries.length / ITEMS_PER_PAGE);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="diaries-page">
       {/* Gap */}
       <div className={styles.gap}></div>
 
@@ -221,6 +225,7 @@ export default function Diaries() {
             theme="light"
             onClick={handleWriteDiary}
             className={styles.writeButton}
+            data-testid="write-diary-button"
           >
             <img
               src="/icons/plus_outline_light_m.svg"
