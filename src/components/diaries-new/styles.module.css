@@ -1,13 +1,17 @@
 /* Wrapper - 640 * 560 */
 .wrapper {
   width: 640px;
+  max-width: 90vw;
   height: 560px;
+  max-height: 90vh;
   display: flex;
   flex-direction: column;
   background-color: var(--background-primary);
   border-radius: 24px;
   padding: 24px;
   box-sizing: border-box;
+  margin: auto;
+  overflow: auto;
 }
 
 /* Header - full * 24 */
