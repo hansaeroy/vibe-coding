@@ -10,11 +10,11 @@
   border-radius: 24px;
   padding: 24px;
   box-sizing: border-box;
-  margin: 0 auto;
   overflow: auto;
-  position: relative;
+  position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Header - full * 24 */
