@@ -11,10 +11,6 @@
   padding: 24px;
   box-sizing: border-box;
   overflow: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 /* Header - full * 24 */
