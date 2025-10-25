@@ -20,18 +20,20 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.5",
+    "ajv": "^8.17.1",
     "autoprefixer": "^10.4.21",
     "next": "14.2.33",
     "next-themes": "^0.4.6",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "vite": "^6.4.1"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^4.1.1",
     "@playwright/test": "^1.56.1",
-    "@storybook/addon-a11y": "9.0.0-alpha.12",
     "@storybook/addon-docs": "9.0.0-alpha.12",
-    "@storybook/addon-essentials": "9.0.0-alpha.12",
     "@storybook/addon-onboarding": "9.0.0-alpha.12",
+    "@storybook/nextjs": "^9.1.15",
     "@storybook/nextjs-vite": "9.0.0-alpha.12",
     "@types/node": "^20",
     "@types/react": "^18",
@@ -40,7 +42,7 @@
     "eslint-config-next": "14.2.33",
     "eslint-plugin-storybook": "^9.1.13",
     "postcss": "^8",
-    "storybook": "9.0.0-alpha.12",
+    "storybook": "^9.1.15",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

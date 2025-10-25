@@ -62,6 +62,7 @@
   display: flex;
   gap: 12px;
   width: 100%;
+  justify-content: center;
 }
 
 /* Dual action의 경우 버튼 크기 조정 */
