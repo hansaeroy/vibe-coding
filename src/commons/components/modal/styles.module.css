@@ -1,0 +1,146 @@
+/* 모달 기본 스타일 */
+.modal {
+  background-color: var(--gray-white);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* 모달 크기 변형 */
+.size-small {
+  width: 320px;
+  padding: 16px;
+  gap: 16px;
+}
+
+.size-medium {
+  width: 480px;
+  padding: 24px;
+  gap: 24px;
+}
+
+.size-large {
+  width: 640px;
+  padding: 32px;
+  gap: 32px;
+}
+
+/* 모달 헤더 */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+
+/* 모달 제목 */
+.title {
+  font-family: "Pretendard Variable", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: -0.24px;
+  color: var(--gray-black);
+  margin: 0;
+}
+
+/* 모달 설명 */
+.description {
+  font-family: "Pretendard Variable", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: var(--gray-80);
+  margin: 0;
+}
+
+/* 모달 액션 버튼 영역 */
+.actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Dual action의 경우 버튼 크기 조정 */
+.actions-dual {
+  justify-content: center;
+}
+
+.actions-dual .halfWidthButton {
+  width: 104px;
+  flex: none;
+}
+
+/* 전체 너비 버튼 (single action) */
+.fullWidthButton {
+  width: 100%;
+}
+
+/* 절반 너비 버튼 (dual action) */
+.halfWidthButton {
+  flex: 1;
+}
+
+/* Variant 스타일 */
+.variant-danger .title {
+  color: var(--red-30);
+}
+
+.variant-danger .description {
+  color: var(--red-30);
+}
+
+.theme-dark {
+  background-color: var(--gray-black);
+}
+
+.theme-dark .title {
+  color: var(--gray-white);
+}
+
+.theme-dark .description {
+  color: var(--gray-30);
+}
+
+/* 비활성화 상태 */
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 640px) {
+  .modal {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 16px;
+  }
+
+  .size-small {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .size-medium {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .size-large {
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
