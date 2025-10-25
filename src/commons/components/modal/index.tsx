@@ -72,7 +72,6 @@ export interface ModalProps extends HTMLDivAttributesWithoutSize {
    * @default false
    */
   disabled?: boolean;
-
 }
 
 /**
