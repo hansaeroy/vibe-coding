@@ -9,7 +9,7 @@ import {
   EMOTION_INFO,
   ALL_EMOTION_TYPES,
 } from "@/commons/constants/enum";
-import { useModal } from "@/commons/providers/modal/modal.provider";
+import { useLinkModalClose } from "./hooks/index.link.modal.close.hook";
 
 export default function DiariesNew() {
   const [selectedEmotion, setSelectedEmotion] = useState<EmotionType | null>(
@@ -18,15 +18,15 @@ export default function DiariesNew() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  // 모달 훅 사용
-  const { closeModal } = useModal();
+  // 등록 취소 모달 관리 훅 사용
+  const { openCancelModal } = useLinkModalClose();
 
   const handleEmotionChange = (emotion: EmotionType) => {
     setSelectedEmotion(emotion);
   };
 
   const handleClose = () => {
-    closeModal();
+    openCancelModal();
   };
 
   const handleSubmit = () => {
@@ -114,7 +114,7 @@ export default function DiariesNew() {
           theme="light"
           onClick={handleClose}
           className={styles.closeButton}
-          data-testid="close-modal-button"
+          data-testid="close-button"
         >
           닫기
         </Button>

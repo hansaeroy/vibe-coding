@@ -40,6 +40,6 @@ export const useLinkModalClose = () => {
   return {
     openCancelModal,
     handleContinueWriting,
-    handleCancelWriting
+    handleCancelWriting,
   };
 };
