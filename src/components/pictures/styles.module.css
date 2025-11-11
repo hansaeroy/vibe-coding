@@ -1,0 +1,52 @@
+/* Wireframe styles for Pictures component */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.inner {
+  width: 1168px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.gapTop {
+  height: 32px; /* 1168 x 32 */
+}
+
+.filter {
+  height: 48px; /* 1168 x 48 */
+  display: flex;
+  align-items: center;
+}
+
+.filterBar {
+  width: 100%;
+  height: 100%;
+  background: #e6e6e6;
+  border: 1px dashed #c0c0c0;
+}
+
+.gapBottom {
+  height: 42px; /* 1168 x 42 */
+}
+
+.main {
+  min-height: 120px; /* auto height area; min for visibility */
+}
+
+.mainPlaceholder {
+  width: 100%;
+  min-height: 120px;
+  background: #f2f2f2;
+  border: 1px dashed #c0c0c0;
+  color: #9a9a9a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
